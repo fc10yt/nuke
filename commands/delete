@@ -1,0 +1,4 @@
+// Delete the channel
+channel.delete('making room for new channels')
+  .then(console.log)
+  .catch(console.error);
