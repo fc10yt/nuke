@@ -1,39 +1,3 @@
-import discord
-from discord.ext import commands
-from discord import Permissions
-import string
-import random
-
-client = commands.Bot(
-    command_prefix='.',
-    case_insensitive=True
-)
-
-
-def allowed(ctx):
-    """A custom check to make sure other people are not able to use the code.
-    The first line only checks for one user.
-    If multiple users are whitelisted, then use the second line."""
-    return ctx.author.id == ID  # replace ID with whitelisted user ID
-    return ctx.author.id in [
-        ID,
-        ID,
-        ID
-   ]  # replace ID with whitelisted users ID
-
-
-@client.event
-async def on_ready():
-    """Tells what the bot to do when it is ready."""
-    await client.change_presence(
-        status=discord.Status.dnd,
-        activity=discord.Game('Nuking Servers Ultimate')
-    )
-    print(
-        f'\nLogged in as {client.user.name}#{client.user.discriminator},',
-        f'User ID: {client.user.id}, Version: {discord.__version__}\n'
-    )
-
 
 @client.event
 async def on_command_error(ctx, error):
